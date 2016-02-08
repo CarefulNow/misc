@@ -5,6 +5,7 @@ f = open('results-trans.csv', 'r')
 comp = "/"
 first = False
 temp = ""
+s = ""
 current_size = 0
 line_num = 0
 ops_per_s = []
@@ -58,7 +59,12 @@ for line in f:
 		current_size = current_size + 1
 		line_num = 0
 
-print current_size
+
+#End of file case
+percent_lock_taken[current_size - 1].append(temp)
+
+
+
 f.close()
 for i in range(0, current_size):
 	t = num_threads[i]
@@ -70,5 +76,7 @@ for i in range(0, current_size):
 	plt.grid(True)
 	plt.savefig(list_size[i][0] + ".png")
 	plt.show()
+
+
 
 #Tree Size/nt/rt/ops/ops-per-s/Lock Taken/%Lock Taken
