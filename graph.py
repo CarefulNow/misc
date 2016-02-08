@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
-
-f = open('results-trans.csv', 'r')
+file_name = 'results-trans.csv'
+f = open(file_name, 'r')
 comp = "/"
 first = False
 temp = ""
@@ -74,7 +74,7 @@ for i in range(0, current_size):
 	plt.ylabel('Operations Per Second')
 	plt.title('Restricted Transactional Memory and a List size of ' + list_size[i][0])
 	plt.grid(True)
-	plt.savefig(list_size[i][0] + ".png")
+	plt.savefig(file_name + "_" + list_size[i][0] + ".png")
 	plt.show()
 
 
